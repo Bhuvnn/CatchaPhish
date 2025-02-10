@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Jura:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+    <section class="translucent-section-1">
+        <div>
+            <h1>CatchaPhish</h1>
+            <div class="catchphrase">
+                <h3>Because Who Needs Common Sense When You Have Us?</h3>
+            </div>
+
+            <div class="intro">
+                <h4>Phishing attacks are more sophisticated than ever, but with CatchaPhish, you can stay one step
+                    ahead. Our advanced detection tool quickly analyzes websites and URLs, protecting you from
+                    fraudulent
+                    traps.
+                    Browse confidently and let us keep you safe from online scams.</h4>
+            </div>
+        </div>
+
+        <div class="search">
+            <form class="search_bar" id="scanForm" action="/scan_URL" method="POST">
+                <input id="url_input" type="text" name="URL" placeholder="Enter your URL here" required>
+                <button class="button-17" type="submit">Scan now</button>
+            </form>
+
+            <div id="loading-screen">
+                <div class="loader"></div>
+                <p>Scanning... Please wait</p>
+            </div>
+
+            <div id="popup" class="popup"></div>
+        </div>
+
+    </section>
+
+    <section class="translucent-section-2">
+
+        <h2>How It Works</h2>
+        <div class="steps">
+            <h3 class="step-num">Step 1: Enter the Website URL </h3>
+            <h4>Type or paste the website link you want to check. (Make sure including "https://" or "http://")</h4>
+
+            <h3 class="step-num">Step 2: Click "Scan Now"</h3>
+            <h4>Our system starts scanning the URL for security risks.</h4>
+
+            <h3 class="step-num">Step 3: AI-Powered Analysis 🧠</h3>
+            <h4>We check domain reputation, HTTPS security, and phishing databases.</h4>
+
+            <h3 class="step-num">Step 4: Get Instant Results 📊</h3>
+            <h4>Safe | Suspicious | Phishing – Stay Protected!</h4>
+        </div>
+
+    </section>
+    <footer>
+        <p>Designed by <strong>Bhubandeep Singh</strong> with love and passion </p> 
+        <p> &copy; 2025 <strong>CatchaPhish</strong>. All rights reserved.</p> 
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
