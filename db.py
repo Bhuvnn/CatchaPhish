@@ -11,10 +11,11 @@ CLIENT_ID = os.environ.get("clientId")
 CLIENT_SECRET = os.environ.get("secret")
 
 auth_provider = PlainTextAuthProvider(CLIENT_ID, CLIENT_SECRET)
-cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
+cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider, protocol_version=4)
 session = cluster.connect()
 
 session.set_keyspace("phishing_data")
+
 
 
 
