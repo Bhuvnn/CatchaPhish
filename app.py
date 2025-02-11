@@ -43,7 +43,7 @@ feature_names=['qty_slash_url', 'length_url', 'qty_dot_domain', 'qty_vowels_doma
        'qty_mx_servers', 'ttl_hostname']
 
 
-model = joblib.load('models\model.pkl')
+model = joblib.load('models/model.pkl')
 
 
 def insert_data(url,is_phishing):
