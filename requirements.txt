@@ -31,7 +31,6 @@ python-whois==0.9.5
 requests-file==2.1.0
 scipy==1.10.1
 sniffio==1.3.1
-tensorflow==2.10.0
 tldextract==5.1.2
 toml==0.10.2
 uuid6==2024.7.10
