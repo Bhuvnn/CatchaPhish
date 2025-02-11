@@ -1,4 +1,4 @@
-﻿
+matplotlib>=3.8.2﻿
 anyio==4.5.2
 astrapy==1.5.2
 astunparse==1.6.3
