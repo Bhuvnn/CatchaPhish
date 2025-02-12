@@ -1,3 +1,5 @@
+from gevent import monkey
+monkey.patch_all()
 from flask import Flask,render_template, request,jsonify
 import joblib
 import os
@@ -59,8 +61,14 @@ def find_features(url):
     # URL features
     url_slashes=url.count("/")
     url_length=len(url)
-    extractor=tld.TLDExtract()
-    extracted_url=extractor(url)
+    extractor = tld.TLDExtract(
+        suffix_list_urls=[
+            "https://publicsuffix.org/list/public_suffix_list.dat",
+            "https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat"
+        ]
+    )
+    # Use the extractor to extract the URL components
+    extracted_url = extractor(url)
     domain=extracted_url.domain
     domain_dots=domain.count(".")
     vowels=len(re.findall(r"[aeiouAEIOU]",domain))
