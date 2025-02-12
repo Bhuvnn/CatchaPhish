@@ -163,3 +163,71 @@
         border-width: 6px;
     }
 }
+/* Your original CSS for other media queries remains exactly the same until 480px */
+
+/* New Media Query for Small Mobile Devices (375px) */
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    h4 {
+        padding-top: 8px;
+        font-size: 0.8rem;
+    }
+
+    .translucent-section-1, .translucent-section-2 {
+        width: 90%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .intro {
+        width: 98%;
+    }
+
+    input {
+        width: 90%;
+        margin: 12px;
+    }
+
+    .button-17 {
+        width: 120px;
+        padding: 2px 15px;
+        font-size: 0.9rem;
+    }
+
+    .catchphrase {
+        padding-bottom: 35px;
+    }
+
+    .popup {
+        width: 95%;
+        min-height: 40px;
+        font-size: 9px;
+        padding: 8px 10px;
+        line-height: 1.3;
+    }
+
+    .popup.show {
+        transform: translate(-50%, 100px);
+    }
+
+    #loading-screen {
+        font-size: 14px;
+    }
+
+    .loader {
+        width: 35px;
+        height: 35px;
+        border-width: 5px;
+    }
+}
