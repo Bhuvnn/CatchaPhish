@@ -1,0 +1,165 @@
+/* Media Query for Large Tablets and Small Laptops (992px) */
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .translucent-section-1, .translucent-section-2 {
+        width: 90%;
+        padding: 40px;
+        margin: 60px auto;
+    }
+
+    .intro {
+        width: 80%;
+    }
+
+    input {
+        width: 60%;
+    }
+}
+
+/* Media Query for Tablets (768px) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+    .translucent-section-1, .translucent-section-2 {
+        width: 85%;
+        padding: 30px;
+        margin: 40px auto;
+    }
+
+    .intro {
+        width: 90%;
+    }
+
+    input {
+        width: 70%;
+    }
+
+    .catchphrase {
+        padding-bottom: 40px;
+    }
+    .popup {
+        position: fixed;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 300px;
+        height: 35px;
+        max-width: 80%;
+        padding: 10px;
+        color: white; /* Text color remains white */
+        font-family: Jura, Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000;
+        font-size: 14px;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.5s ease-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    }
+    
+    .popup.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 120px);
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 15px 0;
+    }
+}
+
+/* Media Query for Mobile Devices (480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        padding-top: 10px;
+        font-size: 0.85rem;
+    }
+
+    .translucent-section-1, .translucent-section-2 {
+        width: 85%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .intro {
+        width: 95%;
+    }
+
+    input {
+        width: 85%;
+        margin: 15px;
+    }
+
+    .button-17 {
+        width: 130px;
+        padding: 2px 20px;
+    }
+
+    .catchphrase {
+        padding-bottom: 40px;
+    }
+
+    .steps {
+        padding: 5px;
+    }
+
+    .step-num {
+        padding: 3px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    .popup {
+        width: 90%;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    #loading-screen {
+        font-size: 16px;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 6px;
+    }
+}
