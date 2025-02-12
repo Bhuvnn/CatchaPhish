@@ -3,7 +3,6 @@ import joblib
 import os
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import sklearn
 import imblearn
 from sklearn.preprocessing import MinMaxScaler
@@ -60,7 +59,8 @@ def find_features(url):
     # URL features
     url_slashes=url.count("/")
     url_length=len(url)
-    extracted_url=tld.extract(url) # extract strings from URL like domain name, path, file names
+    extractor=tld.TLDExtract()
+    extracted_url=extractor(url)
     domain=extracted_url.domain
     domain_dots=domain.count(".")
     vowels=len(re.findall(r"[aeiouAEIOU]",domain))
@@ -96,9 +96,13 @@ def find_features(url):
     
     #response time features
     start_time=time.time()
-    response=requests.get(url,timeout=10)
     end_time=time.time()
-    response_time=end_time-start_time
+    
+    try:
+        response = requests.get(url, timeout=10)
+        response_time = end_time - start_time
+    except requests.exceptions.RequestException:
+        response_time = -1  # Default if request fails
     input_features.append(response_time)
     
     #Network and domain features
@@ -150,8 +154,13 @@ def find_features(url):
     
     input_features.append(len(mx_records))
     
-    ttl_records=dns.resolver.resolve(parsed_url,"A")
-    input_features.append(ttl_records.ttl)
+    try:
+        ttl_records = dns.resolver.resolve(parsed_url, "A")
+        ttl_value = ttl_records.ttl
+    except:
+        ttl_value = -1  # Default if lookup fails
+    input_features.append(ttl_value)
+
     return input_features
     
 app=Flask(__name__)
